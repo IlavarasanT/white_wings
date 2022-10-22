@@ -2,6 +2,25 @@
     <link href="@Url.Content("~/Content/registerpage.css")" rel="stylesheet" type="text/css" />
 }
 
+<head>
+@*    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"> </script>*@
+
+
+
+    @*<a href="~/lib/jquery/dist/jquery.min.map">~/lib/jquery/dist/jquery.min.map</a>*@
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+</head>
 <form id="form" method="post" action="/Home/Register">
     <p>Sign up once and watch our free things.</p>
 
@@ -54,5 +73,58 @@
     </div>
     </div>
 
-    <button type="submit" class="btn btn-default">Register</button>
+    <button type="button" class="btn btn-default" @*onclick="btnSubmit()"*@>Register</button>
 </form>
+
+
+<script type="text/javascript">
+    // <![CDATA[
+    //$('#btnSubmit').click(function () {
+    //    debugger 
+        //$("#form").validate({
+        //    rules: {
+        //        name: {
+        //            required: true,
+        //            maxlength: 10,
+        //            minlength: 3
+        //        },
+               
+        //        },
+        //        messages: {
+        //        name: {
+        //            required: "First name is required",
+        //            maxlength: "Too long",
+        //            minlength: "Too short"
+        //        },
+                
+        //        }
+        //});
+    //});
+    // ]]>
+
+    $(document).ready(function () {
+        $("button").click(function () {
+             
+            alert("jQuery is working perfectly.");
+
+            $("#form").validate({
+                rules: {
+                    name: {
+                        required: true,
+                        maxlength: 10,
+                        minlength: 3
+                    },
+
+                },
+                messages: {
+                    name: {
+                        required: "First name is required",
+                        maxlength: "Too long",
+                        minlength: "Too short"
+                    },
+
+                }
+            });
+        });
+    });
+</script>
